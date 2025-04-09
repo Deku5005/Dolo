@@ -58,6 +58,7 @@ button{
   
 button:active{
     transform: scale(1.8);
+    background-color: #AB0075;
 
 }
 a{
@@ -65,4 +66,12 @@ a{
     text-decoration: none;
     font-size: 170%;
 
+}
+
+@media (max-width: 1024px) {
+    #con{
+        width: 100%;
+        margin-left: 0%;
+    }
+    
 }

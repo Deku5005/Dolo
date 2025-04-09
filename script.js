@@ -1,6 +1,6 @@
 document . getElementById ( "change" ). addEventListener ( "click" , function () {
     const  rightSide  =  document . querySelector ( '#princip' ); 
-    const currentColor = window . getComputedStyle ( right ).backgroundColor ;
+    const currentColor = window . getComputedStyle ( right ). backgroundColor ;
     if ( currentColor === "rgb(76, 175, 80)" || currentColor === "#4CAF50" ) {
     right.style.backgroundColor  =  "" ;
    } else{
