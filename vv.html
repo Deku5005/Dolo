@@ -1,0 +1,46 @@
+<!DOCTYPE html>  
+<html lang="fr">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Générer PDF</title>  
+    <!-- Inclure jsPDF et html2canvas -->  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>  
+    <style>  
+        /* Styles pour votre contenu */  
+        #content {  
+            padding: 20px;   
+            border: 1px solid #000;  
+            width: 400px;  /* Largeur du div pour la conversion en PDF */  
+            text-align: center;  
+        }  
+    </style>  
+</head>  
+<body>  
+
+<div id="content">  
+    <h1>Titre du Document</h1>  
+    <p>Ceci est le contenu qui sera exporté en PDF.</p>  
+</div>  
+
+<button id="downloadBtn">Télécharger PDF</button>  
+
+<script>  
+    document.getElementById('downloadBtn').addEventListener('click', function() {  
+        const { jsPDF } = window.jspdf; // Importer jsPDF  
+
+        // Utiliser html2canvas pour capturer le contenu du <div>  
+        html2canvas(document.getElementById('content')).then(function(canvas) {  
+            const imgData = canvas.toDataURL('image/png'); // Convertir le canvas en image  
+            const pdf = new jsPDF(); // Créer une instance de jsPDF  
+
+            // Ajouter l'image au PDF  
+            pdf.addImage(imgData, 'PNG', 10, 10, 190, (canvas.height * 190) / canvas.width);  
+            pdf.save('document.pdf'); // Sauvegarder le PDF  
+        });  
+    });  
+</script>  
+
+</body>  
+</html>  

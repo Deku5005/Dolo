@@ -1,0 +1,532 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-color: aqua;
+    display: flex;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin: auto; */
+   /* overflow-y: hidden;*/
+    width: 100%;
+    OVERFLOW-X: HIDDEN;
+    height: 100vh;
+    
+}
+
+#princip{
+    width: 595px;
+    position: relative;
+    height: 100vh;
+    display: grid;
+    GAP: 53px;
+    OVERFLOW: HIDDEN;
+    grid-template-columns: 1fr 2fr;
+    background-color: white;
+}
+#left{
+    width:100%;
+    height: 100%;
+    background-color: #E9E3E3;
+
+}
+#haut{
+    width: 100%;
+    height: 30%;
+    background-color: black;
+    border-radius: 0px 0px 100px 100px;
+    margin-top: 5px;
+}
+#bas{
+    width: 90%;
+    height: 70vh;
+    background-color: black;
+    margin-top: 14%;
+    margin-left: 5%;
+    border-radius: 100px 100px 0px 0px;
+    overflow: hidden;
+
+}
+#titre{
+    color: white;
+    font-size: 90%;
+    position: relative;
+    bottom: -30px;
+    margin-left: 20%;
+
+}
+#sous{
+    color: white;
+    font-size: 60%;
+    position: relative;
+    bottom: -30px;
+    margin-left: 18%;
+    margin-top: 8%
+}
+#cercle{
+    width: 83%;
+    height: 47%;
+    background-color: #E9E3E3;
+    margin-left: 8%;
+    margin-top: 54%;
+    border-radius: 50%;
+}
+#img_cercle{
+    width: 90%;
+    height: 90%;
+    margin-top: 5%;
+    margin-left: 5%;
+
+}
+#user{
+    width: 30px;
+    height: 30px;
+    margin-left: 15%;
+    margin-top: 20px;
+}
+#contact{
+    font-size: 60%;
+    margin-left: 35%;
+    margin-top: -12%;
+}
+#appel{
+    width: 20px;
+    height: 20px;
+    margin-left: 13%;
+    margin-top: 5%;
+}
+#appell{
+    font-size: 60%;
+    margin-left: 30%;
+    margin-top: -12%;
+}
+#navigateur{
+    width: 20px;
+    height: 20px;
+    margin-left: 13%;
+    margin-top: 5%;
+
+}
+#navigateurr{
+    font-size: 60%;
+    margin-left: 30%;
+    margin-top: -12%;
+}
+#localisateur{
+    width: 20px;
+    height: 20px;
+    margin-left: 13%;
+    margin-top: 5%;
+}
+#localisateurr{
+    font-size: 60%;
+    margin-left: 30%;
+    margin-top: -12%;
+}
+#graduation{
+    width: 25px;
+    height: 25px;
+    background-color: #E9E3E3;
+    margin-left: 15%;
+    border-radius: 50%;
+    margin-top: 40%;
+}
+#edu{
+    color: white;
+    margin-left: 38%;
+    font-size: 60%;
+    margin-top: -14%;
+}
+#eco{
+    color: white;
+    margin-left: 15%;
+    font-size: 60%;
+    margin-top: 15%;
+}
+#lic{
+    color: white;
+    margin-left: 15%;
+    font-size: 60%;
+    margin-top: 8%;
+}
+#num{
+    color: white;
+    margin-left: 15%;
+    font-size: 60%;
+    margin-top: 8%;
+}
+#gr{
+    width: 25px;
+    height: 25px;
+    background-color: #E9E3E3;
+    margin-left: 15%;
+    border-radius: 50%;
+    margin-top: 8%;
+}
+#ref{
+    color: white;
+    margin-left: 38%;
+    font-size: 60%;
+    margin-top: -14%;
+}
+#mai{
+    color: white;
+    font-size: 60%;
+    margin-left: 15%;
+    margin-top: 15%;
+}
+#phrase{
+    color: white;
+    font-size: 50%;
+    margin-left: 15%;
+}
+#tel{
+    color: white;
+    font-size: 50%;
+    margin-left: 15%;
+    margin-top: 8%;
+
+}
+#ema{
+    color: white;
+    font-size: 50%;
+    margin-left: 15%;
+    margin-top: 8%;
+}
+#maiga{
+    color: white;
+    font-size: 60%;
+    margin-left: 15%;
+    margin-top: 15%;
+}
+#right{
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+ 
+    position: relative;
+   
+}
+#img_1{
+    width: 20px;
+    height: 20px;
+    margin-top: 8%;
+}
+#propos{
+     color: black;
+     margin-left: 10%;
+     font-size: 90%;
+     margin-top: -6.5%;
+}
+#propo{
+    color: black;
+    margin-left: 10%;
+    font-size: 90%;
+    margin-top: -6.5%;
+}
+#p1{
+    font-size: 90%;
+    margin-top: 5%;
+}
+#p1s{
+    font-size: 90%;
+    margin-top: 8%;
+    margin-top: 8%;
+}
+#sac{
+    width: 20px;
+    height: 20px;
+    margin-top:8%;
+}
+#zz{
+    margin-left: 40%;
+}
+#dd{
+    margin-top: 5%;
+}
+#zs{
+    margin-left: 15%;
+}
+#zv{
+    margin-left: 38%;
+}
+#xc{
+    width: 20px;
+    height: 20px;
+    margin-top: 8%;
+}
+#AA{
+    margin-top: 8%;
+}
+#prog{
+    width: 50%;
+    height: 1.5%;
+    background-color: #E9E3E3;
+    margin-left: 30%;
+    margin-top: -5%;
+    border-radius: 30px ;
+}
+#prog1{
+    width: 70%;
+    height: 100%;
+    background-color: #000000;
+    border-radius: 30px 0px 0px 30px;
+}
+#prog2{
+    width: 60%;
+    height: 100%;
+    background-color: #000000;
+    border-radius: 30px 0px 0px 30px;
+
+}
+#prog3{
+    width: 40%;
+    height: 100%;
+    background-color: #000000;
+    border-radius: 30px 0px 0px 30px;
+
+}
+#ln{
+    width: 23px;
+    height: 20px;
+    margin-top: 8%;
+}
+#kl{
+    width: 20px;
+    height: 20px;
+    margin-left: 38%;
+    position: relative;
+    display: flex;
+    margin-top: -5%;
+}
+#proposs{
+    color: black;
+    margin-left: 48%;
+    font-size: 90%;
+    margin-top: -5%;
+}
+#cerclef{
+    width: 10px;
+    height: 11px;
+    border-radius: 50%;
+    background-color: #000000;
+    margin-top: 10%;
+}
+#fran{
+    margin-left: 7%;
+    margin-top: -4.5%;
+}
+#cerclea{
+    width: 10px;
+    height: 11px;
+    border-radius: 50%;
+    background-color: #000000;
+    margin-top: -32%;
+    margin-left: 38%;
+
+}
+#franc{
+    margin-left: 45%;
+    margin-top: -4%;
+}
+
+#francc{
+    margin-left: 45%;
+    margin-top: -4%;
+}
+
+#cercleaa{
+    width: 10px;
+    height: 11px;
+    border-radius: 50%;
+    background-color: #000000;
+    margin-top: 10%;
+    margin-left: 38%;
+
+}
+
+#cercleaaa{
+    width: 10px;
+    height: 11px;
+    border-radius: 50%;
+    background-color: #000000;
+    margin-top: 10%;
+    margin-left: 38%;
+
+}
+
+#franccc{
+    margin-left: 50%;
+    margin-top: -5%;
+}
+
+@media (max-width: 604px) {
+    #princip {
+        GAP: 20px;
+        WIDTH: AUTO;
+    }
+}
+@media (max-width: 435px) {
+    #propos, #propo, #proposs {
+        font-size: 10px;
+    }
+    #p1s, #dd, #zz, #zs, #zv{
+        font-size: 8px;
+
+    }
+    #AA{
+        font-size: 8px;
+    }
+    #prog{
+        width: 25%;
+        margin-top: -5%;
+        height: 0.9%;
+    }
+    #kl{
+        margin-top: -7%;
+    }
+    #cerclea{
+        margin-top: -37%;
+    }
+    #francc{
+        margin-top: -5%;
+    }
+    #franc{
+        margin-top: -5%;
+    }
+    #fran{
+        margin-top: -5.5%;
+    }
+    #contact{
+        font-size: 49%;
+        margin-left: 44%;
+        margin-top: -16%;
+    }
+    #appel{
+        margin-top: 11%;
+    }
+    #appell{
+        margin-left: 37%;
+        margin-top: -15%;
+    }
+    #navigateurr{
+        font-size: 45%;
+        margin-left: 37%;
+    }
+    #localisateurr{
+        font-size: 45%;
+        margin-left: 37%;
+    }
+    #edu{
+        color: white;
+        margin-left: 41%;
+        font-size: 60%;
+        margin-top: -18%;
+    }
+    #eco {
+        color: white;
+        margin-left: 15%;
+        font-size: 48%;
+        margin-top: 15%;
+    }
+    #lic {
+        color: white;
+        margin-left: 15%;
+        font-size: 48%;
+        margin-top: 8%;
+    }
+    #ref {
+        color: white;
+        margin-left: 42%;
+        font-size: 60%;
+        margin-top: -18%;
+    }
+    #mai{
+        font-size: 48%;
+    }
+    #phrase{
+        font-size: 20%;
+        margin-top: 5%;
+    }
+    #mai{
+        font-size: 41%;
+    }
+    #maiga {
+        color: white;
+        font-size: 41%;
+        margin-left: 15%;
+        margin-top: 10%;
+    }
+    #ema {
+        color: white;
+        font-size: 41%;
+        margin-left: 15%;
+        margin-top: 8%;
+    }
+    #titre {
+        color: white;
+        font-size: 59%;
+        position: relative;
+        bottom: -43px;
+        margin-left: 23%;
+    }
+    #sous {
+        color: white;
+        font-size: 53%;
+        position: relative;
+        bottom: -42px;
+        margin-left: 11%;
+    }
+    #cercle {
+        width: 73%;
+        height: 39%;
+        background-color: #E9E3E3;
+        margin-left: 12%;
+        margin-top: 69%;
+        border-radius: 50%;
+    }
+}
+@media(max-width:375px){
+    #cerclea {
+        margin-top: -40%;
+    }
+    #franc {
+        margin-top: -6%;
+    }
+    #francc {
+        margin-top: -5.7%;
+    }
+    #contact {
+        font-size: 42%;
+        margin-left: 44%;
+        margin-top: -18%;
+    }
+    #navigateurr{
+    font-size: 45%;
+    margin-left: 37%;
+    margin-top: -15%;
+    }
+    #localisateur {
+        width: 20px;
+        height: 20px;
+        margin-left: 13%;
+        margin-top: 7%;
+    }
+    #localisateurr {
+        font-size: 45%;
+        margin-top: -15%;
+        margin-left: 37%;
+    }
+    #bas{
+        height: 56vh;
+    }
+
+}
+
+
+

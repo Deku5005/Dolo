@@ -3,56 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+      
+    <link rel="stylesheet" href="cv.css">    
     <title>Document</title>
 </head>
 <body>
-    <div id="divv">
-        <div id="div1">
-            <div id="haut">
-                <h1><b>DOLO OUMAR</b></h1>
-                <p>Developpeur desktop</p>
-                <div id="hautt">
-                    <img src="C:\Users\Kalandew33\Downloads\profile-user.png" alt="dd" id="ii">
+    <main>
 
-                </div>
-                      <img src="C:\Users\Kalandew33\Downloads\profile-user.png" alt="dd" id="i"> 
-                      <p id="jk"><strong>CONTACTEZ MOI</strong></p>
-                      <img src="C:\Users\Kalandew33\Downloads\appel.png" alt="dd" id="iii">
-                      <p id="jkk"><strong>+223 93-76-10-29</strong></p>
-                      <img src="C:\Users\Kalandew33\Downloads\navigateur.png" alt="dd" id="iu">
-                      <p id="jkki"><strong>WWW.DEVWEB.COM</strong></p>
-                      <img src="C:\Users\Kalandew33\Downloads\localisateur.png" alt="dd" id="iuu">
-                      <p id="jkkii"><strong>BAMAKO</strong></p>
-                      
-                <div id="hau">
-                    <div id="ss">
-                        <img src="C:\Users\Kalandew33\Downloads\graduation.jpg" alt="cfc" id="q">
+        <div id="princip" class="princip">
+            <div id="left">
+                <div id="haut">
+                    <h1 id="titre"><strong>DOLO OUMAR</strong></h1>
+                    <p id="sous">DEVELOPPEUR DESKTOP</p>
+                    <div id="cercle">
+                        <img src="profile-user.png" alt="" id="img_cercle"  >
+    
                     </div>
-                    <p id="js"><strong>EDUCATION</strong></p>
-                    <p id="jss"><strong>ECOSUP ALTERNANCE </strong></p>
-                    <p id="jsd"><strong>LICENCE</strong></p>
-                    <p id="jsdF">2023-2024</p>
-                    <img src="C:\Users\Kalandew33\Downloads\groupe.jpg" alt="cfc" id="sd">
-                    <p id="jsq"><strong>REFERENCE</strong></p>
-                    <p id="w"><strong>MAIMOUNA KONATE</strong></p>
-                    <p id="wx">MALI_BAMAKO-TITIBOUGOU </p>
-                    <p id="wy"><strong>TEL:+223 91-90-05-00</strong></p>
-                    <p id="dfg">EMAIL: maimounakeita@gmail.com</p>
-                    <p id="dhj">MAHAMANE MAIGA</p>
-                    <p id="vbn">MALI-BAMAKO-BOULKASSOUMBOUGOU</p>
-                    <p id="bn">Tel: +223 93 38 73 25</p>
-                    <p id="wx">EMAIL : maigamahamane@gmail.com</p>
-
                 </div>
-
+                <img src="profile-user.png" alt="" id="user" >
+                <p id="contact"><strong>CONTACTEZ-MOI</strong></p>
+                <img src="appel.png" alt="" id="appel"  >
+                <p id="appell">+223 93-76-10-29</p>
+                <img src="navigateur.png" alt="" id="navigateur"  >
+                <p id="navigateurr">WWW.DEVWEB.COM</p>
+                <img src="localisateur.png" alt="" id="localisateur"  >
+                <p id="localisateurr">WWW.DEVWEB.COM</p>
+                <div id="bas">
+                    <img src="graduation.jpg" alt="" id="graduation"  >
+                    <p id="edu"><strong>EDUCATION</strong></p>
+                    <p id="eco"><strong>ECOSUP ALTERNANCE</strong></p>
+                    <p id="lic"><strong>LICENCE</strong></p>
+                    <p id="num">2023-2024</p>
+                    <img src="groupe.jpg" alt="" id="gr"  >
+                    <p id="ref">REFERENCE</p>
+                    <p id="mai"><strong>MAIMOUNA KONATE</strong></p>
+                    <p id="phrase">MALI-BAMAKO-TITIBOUGOU</p>
+                    <p id="tel">Tel: +223 91 90 05 00</p>
+                    <p id="ema">EMAIL: maimounakeita@gmail.com</p>
+                    <p id="maiga"><strong>MAHAMANE MAIGA</strong></p>
+                    <p id="phrase">MALI-BAMAKO-BOULKASSOUMBOUGOU</p>
+                    <p id="tel">Tel: +223 93 38 73 25</p>
+                    <p id="ema">EMAIL : maigamahamane@gmail.com</p>
+    
+    
+                </div>
+    
             </div>
-
-        </div>
-        <div id="div2">
+            <div id="right">
+                <img src="profile-user.png" alt="" id="img_1"  >
+                <h1 id="propos"><strong>A PROPOS DE MOI</strong></h1>
+                <p id="p1">Detenteur d'une liccence <br>
+                    en analyse et programmation.  <br>
+                    Avec  trois stages pour complèter
+                    </p>
+                    <img src="sacs.png" alt="" id="sac"  >
+                    <h1 id="propo">EXPERIENCE PROFESSIONNELLE</h1>
+                    <p id="p1s"><strong>DEVELOPPEUR JUNIOR</strong></p>
+                    <p id="dd"><strong>NDO/BAMAKO</strong> <span id="zz"><strong>2025</strong></span></p>
+                    <p id="p1s"><strong>DEVELOPPEUR JUNIOR</strong></p>
+                    <p id="dd"><strong>2DCONSULTING/BAMAKO</strong><span id="zs"><strong>2024</strong></span></p>
+                    <p id="p1s"><strong>DEVELOPPEUR JUNIOR</strong></p>
+                    <p id="dd"><strong>CMDT/SIKASSO</strong><span id="zv"><strong>2023</strong></span></p>
+                    <img src="profil.png" alt="" id="xc"  >
+                    <h1 id="propo">COMPETENCES</h1>
+                    <p id="AA"><strong>HTML/CSS</strong></p>
+                    <div id="prog">
+                        <div id="prog1">
+    
+                        </div>
+    
+                    </div>
+                    <p id="AA"><strong>PYTHON</strong></p>
+                    <div id="prog">
+                        <div id="prog2">
+    
+                        </div>
+    
+                    </div>
+                    <p id="AA"><strong>WORDPRES</strong></p>
+                    <div id="prog">
+                        <div id="prog3">
+    
+                        </div>
+    
+                    </div>
+                    <img src="langue.jpg" alt="" id="ln"  >
+                    <h1 id="propo"><strong>LANGUES</strong></h1>
+                    <img src="in.png" alt="" id="kl"  >
+                    <h1 id="proposs"><strong>LOISIRS</strong></h1>
+                    <div id="cerclef">
+    
+                    </div>
+                    <p id="fran"><strong>Français</strong></p>
+                    
+                    <div id="cerclef">
+    
+                    </div>
+                    <p id="fran"><strong>Anglais</strong></p>
+    
+                    <div id="cerclef">
+    
+                    </div>
+                    <p id="fran"><strong>Bambara</strong></p>
+    
+                    <div id="cerclea">
+    
+                    </div>
+                    <p id="franc"><strong>Musique</strong></p>
+    
+                    <div id="cercleaa">
+    
+                    </div>
+                    <p id="francc"><strong>Football</strong></p>
+    
+                    <div id="cercleaaa">
+    
+                    </div>
+                    <p id="francc"><strong>Manga</strong></p>
+                    <a href="index.html" target="_blank"><button style="width: 10%; height: 4%; margin-top: 5%;border-radius: 20%;" id="annuler">
+                        <img src="annuler.png" alt="" style="width: 100%; height: 100%;"  >
+                     </button></a>
+                     <button style="width: 10%; height: 4%; margin-top: 5%; margin-left: 20%; border-radius: 50%;" id="change">
+                        <img src="circulaire.png" alt="" style="width: 100%; height: 100%;background-color: white; border-radius: 50%;"  >
+                     </button>
+                     <button style="width: 10%; height: 4%; margin-top: 5%; margin-left: 20%; border-radius: 50%; background-color: rgb(255, 255, 255);" id="downloadBtn"  >
+                      <img src="gg.png" alt="" style="width: 100%; height: 100%;">
+                     </button>
+    
+            </div>
     
         </div>
 
-    </div>
+    </main>
+    <script src="script.js">
+          
+    </script>
+   
 </body>
 </html>
