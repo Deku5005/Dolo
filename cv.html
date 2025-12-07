@@ -1,13 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-      
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="cv.css">    
-    <title>Document</title>
+    <title>CV - DOLO OUMAR</title>
+    <script>
+        // Enregistrer le Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((reg) => console.log('Service Worker enregistré', reg))
+                    .catch((err) => console.log('Erreur Service Worker', err));
+            });
+        }
+    </script>
 </head>
 <body>
     <main>
@@ -16,130 +28,313 @@
             <div id="left">
                 <div id="haut">
                     <h1 id="titre"><strong>DOLO OUMAR</strong></h1>
-                    <p id="sous">DEVELOPPEUR DESKTOP</p>
+                    <p id="sous">DEVELOPPEUR WEB/MOBILE FULL STACK</p>
                     <div id="cercle">
-                        <img src="image/profile-user.png" alt="" id="img_cercle"  >
-    
+                        <img src="image/profile-user.png" alt="Photo de profil Dolo Oumar" id="img_cercle" loading="lazy">
                     </div>
                 </div>
-                <img src="image/profile-user.png" alt="" id="user" >
-                <p id="contact"><strong>CONTACTEZ-MOI</strong></p>
-                <img src="image/appel.png" alt="" id="appel"  >
-                <p id="appell">+223 93-76-10-29</p>
-                <img src="image/navigateur.png" alt="" id="navigateur"  >
-                <p id="navigateurr">WWW.DEVWEB.COM</p>
-                <img src="image/localisateur.png" alt="" id="localisateur"  >
-                <p id="localisateurr">WWW.DEVWEB.COM</p>
+                <div class="contact-section">
+                    <p id="contact"><strong>CONTACTEZ-MOI</strong></p>
+                    <a href="tel:+22393761029" class="contact-item" data-tooltip="Cliquez pour appeler">
+                        <img src="image/appel.png" alt="Téléphone" id="appel" loading="lazy">
+                        <p id="appell">+223 93-76-10-29</p>
+                    </a>
+                    <a href="mailto:dolooumar60@gmail.com" class="contact-item" data-tooltip="Envoyer un email">
+                        <img src="image/navigateur.png" alt="Email" id="navigateur" loading="lazy">
+                        <p id="navigateurr">dolooumar60@gmail.com</p>
+                    </a>
+                    <div class="contact-item" data-tooltip="Localisation: Mali, Bamako">
+                        <img src="image/localisateur.png" alt="Localisation" id="localisateur" loading="lazy">
+                        <p id="localisateurr">Mali, Bamako</p>
+                    </div>
+                    <a href="https://github.com/Deku5005" target="_blank" rel="noopener noreferrer" class="contact-item" data-tooltip="Voir mon profil GitHub">
+                        <img src="image/navigateur.png" alt="GitHub" id="github-icon" loading="lazy">
+                        <p id="navigateurr">GitHub</p>
+                    </a>
+                    <a href="https://www.linkedin.com/feed/?trk=guest_homepage-basic_nav-header-signin" target="_blank" rel="noopener noreferrer" class="contact-item" data-tooltip="Voir mon profil LinkedIn">
+                        <img src="image/navigateur.png" alt="LinkedIn" id="linkedin-icon" loading="lazy">
+                        <p id="navigateurr">LinkedIn</p>
+                    </a>
+                </div>
                 <div id="bas">
-                    <img src="image/graduation.jpg" alt="" id="graduation"  >
-                    <p id="edu"><strong>EDUCATION</strong></p>
+                    <div class="section-header">
+                        <img src="image/graduation.jpg" alt="Education" id="graduation" loading="lazy">
+                        <p id="edu"><strong>EDUCATION</strong></p>
+                    </div>
                     <p id="eco"><strong>ECOSUP ALTERNANCE</strong></p>
                     <p id="lic"><strong>LICENCE</strong></p>
                     <p id="num">2023-2024</p>
-                    <img src="image/groupe.jpg" alt="" id="gr"  >
-                    <p id="ref">REFERENCE</p>
-                    <p id="mai"><strong>MAIMOUNA KONATE</strong></p>
-                    <p id="phrase">MALI-BAMAKO-TITIBOUGOU</p>
-                    <p id="tel">Tel: +223 91 90 05 00</p>
-                    <p id="ema">EMAIL: maimounakeita@gmail.com</p>
-                    <p id="maiga"><strong>MAHAMANE MAIGA</strong></p>
-                    <p id="phrase">MALI-BAMAKO-BOULKASSOUMBOUGOU</p>
-                    <p id="tel">Tel: +223 93 38 73 25</p>
-                    <p id="ema">EMAIL : maigamahamane@gmail.com</p>
-    
-    
+                    
+                    <div class="section-header" style="margin-top: 30px;">
+                        <img src="image/groupe.jpg" alt="Références" id="gr" loading="lazy">
+                        <p id="ref">REFERENCE</p>
+                    </div>
+                    
+                    <div class="reference-item">
+                        <p id="mai"><strong>MAIMOUNA KONATE</strong></p>
+                        <p class="phrase">MALI-BAMAKO-TITIBOUGOU</p>
+                        <p class="tel">Tel: +223 91 90 05 00</p>
+                        <p class="ema">EMAIL: maimounakeita@gmail.com</p>
+                    </div>
+                    
+                    <div class="reference-item">
+                        <p id="maiga"><strong>MAHAMANE MAIGA</strong></p>
+                        <p class="phrase">MALI-BAMAKO-BOULKASSOUMBOUGOU</p>
+                        <p class="tel">Tel: +223 93 38 73 25</p>
+                        <p class="ema">EMAIL : maigamahamane@gmail.com</p>
+                    </div>
                 </div>
     
             </div>
-            <div id="right">
-                <img src="image/profile-user.png" alt="" id="img_1"  >
-                <h1 id="propos"><strong>A PROPOS DE MOI</strong></h1>
-                <p id="p1">Detenteur d'une liccence <br>
-                    en analyse et programmation.  <br>
-                    Avec  trois stages pour complèter
-                    </p>
-                    <img src="image/sacs.png" alt="" id="sac"  >
-                    <h1 id="propo">EXPERIENCE PROFESSIONNELLE</h1>
-                    <p id="p1s"><strong>DEVELOPPEUR JUNIOR</strong></p>
-                    <p id="dd"><strong>NDO/BAMAKO</strong> <span id="zz"><strong>2025</strong></span></p>
-                    <p id="p1s"><strong>DEVELOPPEUR JUNIOR</strong></p>
-                    <p id="dd"><strong>2DCONSULTING/BAMAKO</strong><span id="zs"><strong>2024</strong></span></p>
-                    <p id="p1s"><strong>DEVELOPPEUR JUNIOR</strong></p>
-                    <p id="dd"><strong>CMDT/SIKASSO</strong><span id="zv"><strong>2023</strong></span></p>
-                    <img src="image/profil.png" alt="" id="xc"  >
-                    <h1 id="propo">COMPETENCES</h1>
-                    <p id="AA"><strong>HTML/CSS</strong></p>
-                    <div id="prog">
-                        <div id="prog1">
-    
+            <div id="right" class="scroll-smooth">
+                <div class="section">
+                    <div class="section-header">
+                        <img src="image/profile-user.png" alt="À propos" id="img_1" loading="lazy">
+                        <h1 id="propos"><strong>A PROPOS DE MOI</strong></h1>
+                    </div>
+                    <p id="p1">Détenteur d'une licence en analyse et programmation. Avec quatre stages pour compléter ma formation professionnelle.</p>
+                </div>
+                
+                <div class="section">
+                    <div class="section-header">
+                        <img src="image/sacs.png" alt="Expérience" id="sac" loading="lazy">
+                        <h1 id="propo">EXPERIENCE PROFESSIONNELLE</h1>
+                    </div>
+                    <p class="formation-text" style="margin-bottom: 20px; color: var(--ice-secondary);"><strong>Formation de huit mois à Orange Digital Center >De debut fevrier jusqu'à fin novembre</strong></p>
+
+                    <div class="experience-item">
+                        <p class="exp-title"><strong>DEVELOPPEUR DESKTOP</strong></p>
+                        <div class="exp-details">
+                            <span class="exp-location"><strong>NDO/BAMAKO</strong></span>
+                            <span class="exp-date"><strong>2025</strong></span>
                         </div>
-    
                     </div>
-                    <p id="AA"><strong>PYTHON</strong></p>
-                    <div id="prog">
-                        <div id="prog2">
-    
-                        </div>
-    
-                    </div>
-                    <p id="AA"><strong>WORDPRES</strong></p>
-                    <div id="prog">
-                        <div id="prog3">
-    
-                        </div>
-    
-                    </div>
-                    <img src="image/langue.jpg" alt="" id="ln"  >
-                    <h1 id="propo"><strong>LANGUES</strong></h1>
-                    <img src="image/in.png" alt="" id="kl"  >
-                    <h1 id="proposs"><strong>LOISIRS</strong></h1>
-                    <div id="cerclef">
-    
-                    </div>
-                    <p id="fran"><strong>Français</strong></p>
                     
-                    <div id="cerclef">
-    
+                    <div class="experience-item">
+                        <p class="exp-title"><strong>DEVELOPPEUR WEB</strong></p>
+                        <div class="exp-details">
+                            <span class="exp-location"><strong>2DCONSULTING/BAMAKO</strong></span>
+                            <span class="exp-date"><strong>2024</strong></span>
+                        </div>
                     </div>
-                    <p id="fran"><strong>Anglais</strong></p>
-    
-                    <div id="cerclef">
-    
+                    
+                    <div class="experience-item">
+                        <p class="exp-title"><strong>Assistant Informaticien</strong></p>
+                        <div class="exp-details">
+                            <span class="exp-location"><strong>CMDT/SIKASSO</strong></span>
+                            <span class="exp-date"><strong>2023</strong></span>
+                        </div>
                     </div>
-                    <p id="fran"><strong>Bambara</strong></p>
-    
-                    <div id="cerclea">
-    
+                </div>
+                <div class="section">
+                    <div class="section-header">
+                        <img src="image/profil.png" alt="Compétences" id="xc">
+                        <h1 id="propo">COMPETENCES</h1>
                     </div>
-                    <p id="franc"><strong>Musique</strong></p>
-    
-                    <div id="cercleaa">
-    
+                    
+                    <div class="skill-item" data-skill="85">
+                        <div class="skill-header">
+                            <p id="AA"><strong>Angular</strong></p>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div id="prog" class="skill-progress-container">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
                     </div>
-                    <p id="francc"><strong>Football</strong></p>
-    
-                    <div id="cercleaaa">
-    
+                    
+                    <div class="skill-item" data-skill="85">
+                        <div class="skill-header">
+                            <p id="AA"><strong>PYTHON</strong></p>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div id="prog" class="skill-progress-container">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
                     </div>
-                    <p id="francc"><strong>Manga</strong></p>
-                    <a href="index.html" target="_blank"><button style="width: 10%; height: 4%; margin-top: 5%;border-radius: 20%;" id="annuler">
-                        <img src="image/annuler.png" alt="" style="width: 100%; height: 100%;"  >
-                     </button></a>
-                     <button style="width: 10%; height: 4%; margin-top: 5%; margin-left: 20%; border-radius: 50%;" id="change">
-                        <img src="image/circulaire.png" alt="" style="width: 100%; height: 100%;background-color: white; border-radius: 50%;"  >
-                     </button>
-                     <button style="width: 10%; height: 4%; margin-top: 5%; margin-left: 20%; border-radius: 50%; background-color: rgb(255, 255, 255);" id="downloadBtn"  >
-                      <img src="image/gg.png" alt="" style="width: 100%; height: 100%;">
-                     </button>
+                    
+                    <div class="skill-item" data-skill="85">
+                        <div class="skill-header">
+                            <p id="AA"><strong>SPRING BOOT</strong></p>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div id="prog" class="skill-progress-container">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item" data-skill="85">
+                        <div class="skill-header">
+                            <p id="AA"><strong>FLUTTER</strong></p>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div id="prog" class="skill-progress-container">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item" data-skill="85">
+                        <div class="skill-header">
+                            <p id="AA"><strong>FIGMA</strong></p>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div id="prog" class="skill-progress-container">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item" data-skill="85">
+                        <div class="skill-header">
+                            <p id="AA"><strong>UML</strong></p>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div id="prog" class="skill-progress-container">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item" data-skill="85">
+                        <div class="skill-header">
+                            <p id="AA"><strong>SQL</strong></p>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div id="prog" class="skill-progress-container">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item" data-skill="85">
+                        <div class="skill-header">
+                            <p id="AA"><strong>WORDPRESS</strong></p>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div id="prog" class="skill-progress-container">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item" data-skill="85">
+                        <div class="skill-header">
+                            <p id="AA"><strong>GIT/GITHUB</strong></p>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div id="prog" class="skill-progress-container">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="section-header">
+                        <img src="image/langue.jpg" alt="Langues" id="ln" loading="lazy">
+                        <h1 id="propo"><strong>LANGUES</strong></h1>
+                    </div>
+                    
+                    <div class="languages-container">
+                        <div class="language-item">
+                            <div id="cerclef"></div>
+                            <p id="fran"><strong>Français</strong></p>
+                        </div>
+                        <div class="language-item">
+                            <div id="cerclef"></div>
+                            <p id="fran"><strong>Anglais</strong></p>
+                        </div>
+                        <div class="language-item">
+                            <div id="cerclef"></div>
+                            <p id="fran"><strong>Bambara</strong></p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="section">
+                    <div class="section-header">
+                        <img src="image/in.png" alt="Loisirs" id="kl" loading="lazy">
+                        <h1 id="proposs"><strong>LOISIRS</strong></h1>
+                    </div>
+                    
+                    <div class="hobbies-container">
+                        <div class="hobby-item">
+                            <div id="cerclea"></div>
+                            <p id="franc"><strong>Musique</strong></p>
+                        </div>
+                        <div class="hobby-item">
+                            <div id="cercleaa"></div>
+                            <p id="francc"><strong>Football</strong></p>
+                        </div>
+                        <div class="hobby-item">
+                            <div id="cercleaaa"></div>
+                            <p id="francc"><strong>Manga</strong></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="button-group">
+                    <a href="index.html" target="_blank" data-tooltip="Retour à l'accueil">
+                        <button id="annuler" aria-label="Retour à l'accueil">
+                            <img src="image/annuler.png" alt="Retour" loading="lazy">
+                        </button>
+                    </a>
+                    <div class="color-theme-container">
+                        <button id="change" data-tooltip="Changer le thème de couleur" aria-label="Changer le thème">
+                            <img src="image/circulaire.png" alt="Changer" loading="lazy">
+                        </button>
+                        <div class="color-theme-menu" id="colorThemeMenu">
+                            <h3>Thèmes disponibles</h3>
+                            <div class="theme-option" data-theme="ice">
+                                <div class="theme-preview" style="background: linear-gradient(135deg, #00D4FF, #0099CC);"></div>
+                                <span>Glacé</span>
+                            </div>
+                            <div class="theme-option" data-theme="purple">
+                                <div class="theme-preview" style="background: linear-gradient(135deg, #9D50BB, #6E48AA);"></div>
+                                <span>Violet</span>
+                            </div>
+                            <div class="theme-option" data-theme="green">
+                                <div class="theme-preview" style="background: linear-gradient(135deg, #11998e, #38ef7d);"></div>
+                                <span>Vert</span>
+                            </div>
+                            <div class="theme-option" data-theme="orange">
+                                <div class="theme-preview" style="background: linear-gradient(135deg, #f093fb, #f5576c);"></div>
+                                <span>Rose</span>
+                            </div>
+                            <div class="theme-option" data-theme="blue">
+                                <div class="theme-preview" style="background: linear-gradient(135deg, #4facfe, #00f2fe);"></div>
+                                <span>Bleu</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="downloadBtn" data-tooltip="Télécharger le CV en PDF" aria-label="Télécharger le CV">
+                        <img src="image/gg.png" alt="Télécharger" loading="lazy" class="download-icon">
+                        <span class="download-loader" style="display: none;"></span>
+                    </button>
+                </div>
+                
+                <!-- Palette de couleurs personnalisable -->
+                <div class="color-picker-container" id="colorPickerContainer">
+                    <button class="color-picker-toggle" id="colorPickerToggle" data-tooltip="Personnaliser les couleurs" aria-label="Ouvrir le sélecteur de couleurs">
+                        🎨
+                    </button>
+                    <div class="color-picker-menu" id="colorPickerMenu">
+                        <h3>Personnaliser les couleurs</h3>
+                        <div class="color-option" data-color="ice" style="background: linear-gradient(135deg, #00D4FF, #0099CC);"></div>
+                        <div class="color-option" data-color="purple" style="background: linear-gradient(135deg, #9D50BB, #6E48AA);"></div>
+                        <div class="color-option" data-color="green" style="background: linear-gradient(135deg, #11998e, #38ef7d);"></div>
+                        <div class="color-option" data-color="orange" style="background: linear-gradient(135deg, #f093fb, #f5576c);"></div>
+                        <div class="color-option" data-color="blue" style="background: linear-gradient(135deg, #4facfe, #00f2fe);"></div>
+                    </div>
+                </div>
     
             </div>
     
         </div>
 
     </main>
-    <script src="script.js">
-          
-    </script>
+    <!-- Loading overlay pour PDF -->
+    <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Génération du PDF en cours...</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
    
 </body>
 </html>

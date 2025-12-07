@@ -1,23 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DOLO OUMAR - Développeur Full Stack</title>
+    <script>
+        // Enregistrer le Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((reg) => console.log('Service Worker enregistré', reg))
+                    .catch((err) => console.log('Erreur Service Worker', err));
+            });
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <main>
-        <div id="con">
-            <h1 id="titre">DEV<span> 
-            </span>MOBILE</h1>
-            <p id="para">BBIENVENU SUR MA PAGE</p>
-            <img src="image/nn.jpg" alt="" id="">
-            <a href="cv.html" target="_blank"><button>cv</button></a>
-         
+    <div class="animated-background">
+        <div class="snowflake" style="--delay: 0s; --duration: 10s; left: 10%"></div>
+        <div class="snowflake" style="--delay: 1s; --duration: 12s; left: 20%"></div>
+        <div class="snowflake" style="--delay: 2s; --duration: 15s; left: 30%"></div>
+        <div class="snowflake" style="--delay: 3s; --duration: 11s; left: 40%"></div>
+        <div class="snowflake" style="--delay: 4s; --duration: 13s; left: 50%"></div>
+        <div class="snowflake" style="--delay: 5s; --duration: 14s; left: 60%"></div>
+        <div class="snowflake" style="--delay: 6s; --duration: 10s; left: 70%"></div>
+        <div class="snowflake" style="--delay: 7s; --duration: 12s; left: 80%"></div>
+        <div class="snowflake" style="--delay: 8s; --duration: 15s; left: 90%"></div>
+    </div>
+    
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+    </div>
 
+    <main>
+        <div id="con" class="container">
+            <div class="glow-effect"></div>
+            <div class="content-wrapper">
+                <h1 id="titre" class="glitch-text">
+                    <span class="text-gradient">DEV WEB</span>
+                    <span class="text-ice">MOBILE</span>
+                    <span class="text-gradient">FULL STACK</span>
+                </h1>
+                <p id="para" class="welcome-text">BIENVENU SUR MA PAGE</p>
+                
+                <div class="image-container">
+                    <div class="image-glow"></div>
+                    <img src="image/nn.jpg" alt="Photo de profil Dolo Oumar" class="profile-image" id="profileImg" loading="lazy">
+                </div>
+                
+                <div class="button-wrapper">
+                    <a href="cv.html" target="_blank" class="btn-link">
+                        <button class="ice-button" id="cvButton">
+                            <span class="button-text">VOIR MON CV</span>
+                            <span class="button-icon">❄️</span>
+                        </button>
+                    </a>
+                </div>
+
+                <div class="social-icons">
+                    <a href="https://github.com/Deku5005" target="_blank" rel="noopener noreferrer" class="icon-link">
+                        <div class="icon-circle" data-tooltip="GitHub - Voir mon profil">💻</div>
+                    </a>
+                    <a href="https://www.linkedin.com/feed/?trk=guest_homepage-basic_nav-header-signin" target="_blank" rel="noopener noreferrer" class="icon-link">
+                        <div class="icon-circle" data-tooltip="LinkedIn - Voir mon profil">💼</div>
+                    </a>
+                    <a href="mailto:dolooumar60@gmail.com" class="icon-link">
+                        <div class="icon-circle" data-tooltip="Email - dolooumar60@gmail.com">✉️</div>
+                    </a>
+                </div>
+            </div>
         </div>
     </main>
-    
+
+    <canvas id="particleCanvas"></canvas>
+    <script src="index.js"></script>
 </body>
 </html>
