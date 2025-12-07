@@ -87,6 +87,47 @@
     
             </div>
             <div id="right" class="scroll-smooth">
+                <!-- Boutons en haut -->
+                <div class="button-group">
+                    <a href="index.html" target="_blank" data-tooltip="Retour à l'accueil">
+                        <button id="annuler" aria-label="Retour à l'accueil">
+                            <img src="image/annuler.png" alt="Retour" loading="lazy">
+                        </button>
+                    </a>
+                    <div class="color-theme-container">
+                        <button id="change" data-tooltip="Changer le thème de couleur" aria-label="Changer le thème">
+                            <img src="image/circulaire.png" alt="Changer" loading="lazy">
+                        </button>
+                        <div class="color-theme-menu" id="colorThemeMenu">
+                            <h3>Thèmes disponibles</h3>
+                            <div class="theme-option" data-theme="ice">
+                                <div class="theme-preview" style="background: linear-gradient(135deg, #00D4FF, #0099CC);"></div>
+                                <span>Glacé</span>
+                            </div>
+                            <div class="theme-option" data-theme="purple">
+                                <div class="theme-preview" style="background: linear-gradient(135deg, #9D50BB, #6E48AA);"></div>
+                                <span>Violet</span>
+                            </div>
+                            <div class="theme-option" data-theme="green">
+                                <div class="theme-preview" style="background: linear-gradient(135deg, #11998e, #38ef7d);"></div>
+                                <span>Vert</span>
+                            </div>
+                            <div class="theme-option" data-theme="orange">
+                                <div class="theme-preview" style="background: linear-gradient(135deg, #f093fb, #f5576c);"></div>
+                                <span>Rose</span>
+                            </div>
+                            <div class="theme-option" data-theme="blue">
+                                <div class="theme-preview" style="background: linear-gradient(135deg, #4facfe, #00f2fe);"></div>
+                                <span>Bleu</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="downloadBtn" data-tooltip="Télécharger le CV en PDF" aria-label="Télécharger le CV">
+                        <img src="image/gg.png" alt="Télécharger" loading="lazy" class="download-icon">
+                        <span class="download-loader" style="display: none;"></span>
+                    </button>
+                </div>
+                
                 <div class="section">
                     <div class="section-header">
                         <img src="image/profile-user.png" alt="À propos" id="img_1" loading="lazy">
@@ -264,46 +305,6 @@
                             <p id="francc"><strong>Manga</strong></p>
                         </div>
                     </div>
-                </div>
-                
-                <div class="button-group">
-                    <a href="index.html" target="_blank" data-tooltip="Retour à l'accueil">
-                        <button id="annuler" aria-label="Retour à l'accueil">
-                            <img src="image/annuler.png" alt="Retour" loading="lazy">
-                        </button>
-                    </a>
-                    <div class="color-theme-container">
-                        <button id="change" data-tooltip="Changer le thème de couleur" aria-label="Changer le thème">
-                            <img src="image/circulaire.png" alt="Changer" loading="lazy">
-                        </button>
-                        <div class="color-theme-menu" id="colorThemeMenu">
-                            <h3>Thèmes disponibles</h3>
-                            <div class="theme-option" data-theme="ice">
-                                <div class="theme-preview" style="background: linear-gradient(135deg, #00D4FF, #0099CC);"></div>
-                                <span>Glacé</span>
-                            </div>
-                            <div class="theme-option" data-theme="purple">
-                                <div class="theme-preview" style="background: linear-gradient(135deg, #9D50BB, #6E48AA);"></div>
-                                <span>Violet</span>
-                            </div>
-                            <div class="theme-option" data-theme="green">
-                                <div class="theme-preview" style="background: linear-gradient(135deg, #11998e, #38ef7d);"></div>
-                                <span>Vert</span>
-                            </div>
-                            <div class="theme-option" data-theme="orange">
-                                <div class="theme-preview" style="background: linear-gradient(135deg, #f093fb, #f5576c);"></div>
-                                <span>Rose</span>
-                            </div>
-                            <div class="theme-option" data-theme="blue">
-                                <div class="theme-preview" style="background: linear-gradient(135deg, #4facfe, #00f2fe);"></div>
-                                <span>Bleu</span>
-                            </div>
-                        </div>
-                    </div>
-                    <button id="downloadBtn" data-tooltip="Télécharger le CV en PDF" aria-label="Télécharger le CV">
-                        <img src="image/gg.png" alt="Télécharger" loading="lazy" class="download-icon">
-                        <span class="download-loader" style="display: none;"></span>
-                    </button>
                 </div>
                 
                 <!-- Palette de couleurs personnalisable -->

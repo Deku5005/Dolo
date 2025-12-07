@@ -345,7 +345,7 @@ a.contact-item {
     height: 100%;
     max-height: 100%;
     background: white;
-    padding: 20px 20px;
+    padding: 10px 20px 20px 20px;
     position: relative;
     overflow-y: auto;
     overflow-x: hidden;
@@ -537,14 +537,16 @@ a.contact-item {
     margin: 0;
 }
 
-/* Boutons */
+/* Boutons en haut */
 .button-group {
     display: flex;
     gap: 10px;
-    margin-top: 20px;
-    padding-top: 15px;
-    border-top: 2px solid var(--ice-light);
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding: 10px 0 15px 0;
+    border-bottom: 2px solid var(--ice-light);
     justify-content: center;
+    align-items: center;
 }
 
 #annuler, #change, #downloadBtn {
@@ -656,8 +658,10 @@ a.contact-item {
     }
     
     .button-group {
-        margin-top: 15px;
-        padding-top: 12px;
+        margin-top: 0;
+        margin-bottom: 15px;
+        padding-top: 10px;
+        padding-bottom: 12px;
     }
     
     #annuler, #change, #downloadBtn {
@@ -736,7 +740,10 @@ a.contact-item {
     .button-group {
         flex-wrap: wrap;
         gap: 8px;
-        margin-top: 12px;
+        margin-top: 0;
+        margin-bottom: 12px;
+        padding-top: 8px;
+        padding-bottom: 10px;
     }
     
     #annuler, #change, #downloadBtn {
