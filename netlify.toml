@@ -1,0 +1,12 @@
+# Configuration Netlify pour le CV de Dolo Oumar
+# Site statique - pas de build nécessaire
+
+[build]
+  publish = "."
+
+# Redirections (optionnel - pour les routes SPA si besoin)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+

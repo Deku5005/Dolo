@@ -317,8 +317,38 @@ document.addEventListener('DOMContentLoaded', () => {
                 element.style.height = 'auto';
                 element.style.maxHeight = 'none';
                 
-                // Attendre un peu pour que les changements soient appliqués
-                await new Promise(resolve => setTimeout(resolve, 200));
+                // Calculer la hauteur maximale des deux colonnes avant la capture
+                const leftCol = element.querySelector('#left');
+                const rightCol = element.querySelector('#right');
+                let calculatedMaxHeight = 0;
+                
+                if (leftCol && rightCol) {
+                    // Permettre aux colonnes de s'ajuster à leur contenu
+                    leftCol.style.height = 'auto';
+                    leftCol.style.maxHeight = 'none';
+                    leftCol.style.overflow = 'visible';
+                    rightCol.style.height = 'auto';
+                    rightCol.style.maxHeight = 'none';
+                    rightCol.style.overflow = 'visible';
+                    
+                    // Attendre que le DOM se mette à jour
+                    await new Promise(resolve => setTimeout(resolve, 200));
+                    
+                    // Calculer les hauteurs réelles
+                    const leftHeight = Math.max(leftCol.scrollHeight, leftCol.offsetHeight);
+                    const rightHeight = Math.max(rightCol.scrollHeight, rightCol.offsetHeight);
+                    calculatedMaxHeight = Math.max(leftHeight, rightHeight, 800); // Minimum 800px
+                    
+                    // Appliquer la même hauteur aux deux colonnes
+                    leftCol.style.height = calculatedMaxHeight + 'px';
+                    rightCol.style.height = calculatedMaxHeight + 'px';
+                    
+                    // Stocker la hauteur dans l'élément pour qu'elle soit accessible dans le clone
+                    element.setAttribute('data-max-height', calculatedMaxHeight);
+                    
+                    // Attendre un peu pour que les styles soient appliqués
+                    await new Promise(resolve => setTimeout(resolve, 200));
+                }
                 
                 // Générer le canvas - configuration pour éviter les problèmes CORS
   const canvas = await html2canvas(element, {
@@ -328,6 +358,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     backgroundColor: '#ffffff',
                     logging: false,
                     onclone: (clonedDoc) => {
+                        // Récupérer la hauteur calculée depuis l'attribut data
+                        const clonedPrincipElement = clonedDoc.getElementById('princip');
+                        const storedMaxHeight = clonedPrincipElement ? parseInt(clonedPrincipElement.getAttribute('data-max-height') || '0') : 0;
+                        
                         // Cacher les boutons et UI dans le clone
                         const clonedBtns = clonedDoc.querySelectorAll('button, .button-group, .color-picker-container, .color-theme-container, .loading-overlay, .floating-particle');
                         clonedBtns.forEach(b => {
@@ -352,38 +386,48 @@ document.addEventListener('DOMContentLoaded', () => {
                         });
                         
                         // S'assurer que l'élément principal est visible et affiche tout
-                        const clonedElement = clonedDoc.getElementById('princip');
-                        if (clonedElement) {
-                            clonedElement.style.display = 'grid';
-                            clonedElement.style.visibility = 'visible';
-                            clonedElement.style.opacity = '1';
-                            clonedElement.style.overflow = 'visible';
-                            clonedElement.style.height = 'auto';
-                            clonedElement.style.maxHeight = 'none';
-                            clonedElement.style.animation = 'none';
-                            clonedElement.style.transform = 'none';
+                        const clonedPrincip = clonedDoc.getElementById('princip');
+                        if (clonedPrincip) {
+                            clonedPrincip.style.display = 'grid';
+                            clonedPrincip.style.visibility = 'visible';
+                            clonedPrincip.style.opacity = '1';
+                            clonedPrincip.style.overflow = 'visible';
+                            clonedPrincip.style.height = 'auto';
+                            clonedPrincip.style.maxHeight = 'none';
+                            clonedPrincip.style.animation = 'none';
+                            clonedPrincip.style.transform = 'none';
                         }
                         
-                        // S'assurer que les colonnes affichent tout leur contenu
+                        // S'assurer que les colonnes ont la même hauteur
                         const clonedLeft = clonedDoc.getElementById('left');
                         const clonedRight = clonedDoc.getElementById('right');
-                        if (clonedLeft) {
+                        
+                        if (clonedLeft && clonedRight) {
                             clonedLeft.style.overflow = 'visible';
-                            clonedLeft.style.height = 'auto';
                             clonedLeft.style.maxHeight = 'none';
                             clonedLeft.style.animation = 'none';
                             clonedLeft.style.transform = 'none';
-                        }
-                        if (clonedRight) {
+                            
                             clonedRight.style.overflow = 'visible';
-                            clonedRight.style.height = 'auto';
                             clonedRight.style.maxHeight = 'none';
                             clonedRight.style.animation = 'none';
                             clonedRight.style.transform = 'none';
+                            
+                            // Forcer la même hauteur calculée
+                            if (storedMaxHeight > 0) {
+                                clonedLeft.style.height = storedMaxHeight + 'px';
+                                clonedRight.style.height = storedMaxHeight + 'px';
+                            }
                         }
                         
                         // Désactiver toutes les animations et effets visuels pour le PDF
                         const style = clonedDoc.createElement('style');
+                        const heightStyle = storedMaxHeight > 0 ? `
+                            #left, #right {
+                                height: ${storedMaxHeight}px !important;
+                                min-height: ${storedMaxHeight}px !important;
+                            }
+                            ` : '';
                         style.textContent = `
                             * {
                                 -webkit-print-color-adjust: exact !important;
@@ -392,6 +436,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 animation: none !important;
                                 transition: none !important;
                             }
+                            ${heightStyle}
                             /* Désactiver les pseudo-éléments qui créent des effets visuels */
                             #left::before,
                             #left::after,
@@ -504,12 +549,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 console.log('Image data générée:', imgData.substring(0, 50) + '...');
 
-  // Créer le PDF
+  // Créer le PDF au format A4 portrait
   const { jsPDF } = window.jspdf;
-                const pdf = new jsPDF("l", "mm", "a4"); // Format paysage
+                const pdf = new jsPDF("p", "mm", "a4"); // Format portrait A4
 
-                const pageWidth = pdf.internal.pageSize.getWidth(); // 297mm
-                const pageHeight = pdf.internal.pageSize.getHeight(); // 210mm
+                const pageWidth = pdf.internal.pageSize.getWidth(); // 210mm
+                const pageHeight = pdf.internal.pageSize.getHeight(); // 297mm
 
   const imgProps = pdf.getImageProperties(imgData);
                 console.log('Propriétés image:', imgProps);
